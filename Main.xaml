@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main" VisualBasic.Settings="{x:Null}" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="565,473" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -25,6 +25,10 @@
       <x:String>System.Windows.Markup</x:String>
       <x:String>GlobalVariablesNamespace</x:String>
       <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>UiPath.Mail</x:String>
+      <x:String>UiPath.Mail.Outlook.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Mail.Activities</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -53,13 +57,26 @@
       <AssemblyReference>UiPath.System.Activities</AssemblyReference>
       <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
       <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities.Design</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Main Sequence" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="416,408" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
+    <ui:SendOutlookMail Bcc="{x:Null}" Cc="{x:Null}" ContinueOnError="{x:Null}" MailMessage="{x:Null}" ReplyTo="{x:Null}" TimeoutMS="{x:Null}" Account="veera@nalashaa.com" Body="&lt;html&gt;&#xA;&lt;body&gt;&#xA;&#xA;&lt;p&gt;Hello Team,&lt;/p&gt;&#xA;&lt;p&gt;Please find the summary of the job performed today.To view the detailed report click &lt;a href=file_attachment_path&gt;here&lt;/a&gt;.!&lt;/p&gt;&#xA;&#xA;&lt;table style='width:20%; border-collapse:collapse'&gt;&#xA;&lt;tr&gt;&#xA;&lt;th style='background-color: darkgray; border: 1px solid; text-align:left '&gt;&lt;i&gt;Status&lt;/i&gt;&lt;/th&gt;&#xA;&lt;th style='background-color:darkgray; border: 1px solid; '&gt;&lt;i&gt;Count&lt;/i&gt;&lt;/th&gt;&#xA;&lt;/tr&gt;&#xA;&lt;tr&gt;&#xA;&lt;td style='border:1px solid;' &gt;&lt;i&gt;Total Records&lt;/i&gt;&lt;/td&gt;&#xA;&lt;td style='border: 1px solid; text-align:center '&gt;&lt;i&gt;&lt;TotalNoofRecords&gt;&lt;/i&gt;&lt;/td&gt;&#xA;&lt;/tr&gt;&#xA;&lt;tr&gt;&#xA;&lt;td style='border: 1px solid; '&gt;&lt;i&gt;Completed&lt;/i&gt;&lt;/td&gt;&#xA;&lt;td style='border: 1px solid; text-align:center'&gt;&lt;i&gt;&lt;Completed&gt;&lt;/i&gt;&lt;/td&gt;&#xA;&lt;tr&gt;&#xA;&lt;td style='border: 1px solid; '&gt;&lt;i&gt;Business Exception&lt;/i&gt;&lt;/td&gt;&#xA;&lt;td style='border: 1px solid; text-align:center'&gt;&lt;i&gt;&lt;BusinessException&gt;&lt;/i&gt;&lt;/td&gt;&#xA;&lt;/tr&gt;&#xA;&lt;tr&gt;&#xA;&lt;td style='border: 1px solid; '&gt;&lt;i&gt;System Exception&lt;/i&gt;&lt;/td&gt;&#xA;&lt;td style='border: 1px solid; text-align:center'&gt;&lt;i&gt;&lt;SystemException&gt;&lt;/i&gt;&lt;/td&gt;&#xA;&lt;/tr&gt;&#xA;&lt;/table&gt;&#xA;&lt;br /&gt;&#xA;&lt;br /&gt;&#xA;&lt;/body&gt;&#xA;&lt;body&gt;&#xA;&#xA;&#xA;&#xA;&lt;table style='width:20%; border-collapse:collapse'&gt;&#xA;&lt;tr&gt;&#xA;&lt;th style='background-color: darkgray; border: 1px solid; text-align:left '&gt;&lt;i&gt;Document Status&lt;/i&gt;&lt;/th&gt;&#xA;&lt;th style='background-color:darkgray; border: 1px solid; '&gt;&lt;i&gt;Count&lt;/i&gt;&lt;/th&gt;&#xA;&lt;/tr&gt;&#xA;&lt;tr&gt;&#xA;&lt;td style='border:1px solid;' &gt;&lt;i&gt;Total Records&lt;/i&gt;&lt;/td&gt;&#xA;&lt;td style='border: 1px solid; text-align:center '&gt;&lt;i&gt;&lt;TotalNoofRecords&gt;&lt;/i&gt;&lt;/td&gt;&#xA;&lt;/tr&gt;&#xA;&lt;tr&gt;&#xA;&lt;td style='border: 1px solid; '&gt;&lt;i&gt;Completed&lt;/i&gt;&lt;/td&gt;&#xA;&lt;td style='border: 1px solid; text-align:center'&gt;&lt;i&gt;&lt;Completed&gt;&lt;/i&gt;&lt;/td&gt;&#xA;&lt;tr&gt;&#xA;&lt;td style='border: 1px solid; '&gt;&lt;i&gt;Business Exception&lt;/i&gt;&lt;/td&gt;&#xA;&lt;td style='border: 1px solid; text-align:center'&gt;&lt;i&gt;&lt;BusinessException&gt;&lt;/i&gt;&lt;/td&gt;&#xA;&lt;/tr&gt;&#xA;&lt;tr&gt;&#xA;&lt;td style='border: 1px solid; '&gt;&lt;i&gt;System Exception&lt;/i&gt;&lt;/td&gt;&#xA;&lt;td style='border: 1px solid; text-align:center'&gt;&lt;i&gt;&lt;SystemException&gt;&lt;/i&gt;&lt;/td&gt;&#xA;&lt;/tr&gt;&#xA;&lt;/table&gt;&#xA;&lt;br /&gt;&#xA;&lt;br /&gt;&#xA;&lt;p style='margin:0'&gt;Regards,&lt;br /&gt;MRR Bot&lt;br /&gt;&lt;/p&gt;&#xA;&lt;p style='color:blue; margin:0'&gt;&lt;i&gt;Make life simpler!&lt;/i&gt;&lt;/p&gt;&#xA;&lt;/body&gt;&#xA;&lt;/html&gt;" DisplayName="Send Outlook Mail Message" sap:VirtualizedContainerService.HintSize="354,320" sap2010:WorkflowViewState.IdRef="SendOutlookMail_1" Importance="Normal" IsBodyHtml="True" IsDraft="False" Sensitivity="Normal" Subject="veera" To="veera@nalashaa.com">
+      <ui:SendOutlookMail.Files>
+        <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
+      </ui:SendOutlookMail.Files>
+    </ui:SendOutlookMail>
   </Sequence>
 </Activity>
